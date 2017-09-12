@@ -17,6 +17,13 @@ module.exports = async function handleAdd(sentence, description, partStr) {
     part = 0;
   }
 
-  await addWord({word, sentence, description, part});
-  console.log(`Word ${word} has been added.`);
+  try {
+    await addWord({word, sentence, description, part})
+    console.log(`Word ${word} has been added.`);
+  }
+  catch (err) {
+    if ('SQLITE_CONSTRAINT: UNIQUE constraint failed: Word.word, Word.part' === err.message) {
+      console.log(`${word} ${partStr} exists.`);
+    }
+  }
 }
