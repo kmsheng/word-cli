@@ -9,10 +9,10 @@ module.exports = function createWordTable() {
         answerWrong INTEGER DEFAULT 0 NOT NULL);
       `, (err) => {
         if (err) {
-          reject(err);
+          return reject(err);
         }
+        resolve();
       });
     });
-    resolve();
   });
 }
