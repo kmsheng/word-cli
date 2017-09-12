@@ -7,7 +7,6 @@ module.exports = function createWordTable() {
         CREATE TABLE IF NOT EXISTS Word (word TEXT, part INTEGER DEFAULT 0 NOT NULL, sentence TEXT,
         description TEXT, answerCorrect INTEGER DEFAULT 0 NOT NULL,
         answerWrong INTEGER DEFAULT 0 NOT NULL);
-        CREATE UNIQUE INDEX \`word_word_unique\` ON \`Word\` (\`word\`, \`part\`)
       `, (err) => {
         if (err) {
           reject(err);
