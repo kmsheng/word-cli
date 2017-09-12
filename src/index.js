@@ -2,7 +2,7 @@
 
 const program = require('commander');
 const version = require('./../package.json').version;
-const createWordTable = require('./models/createWordTable');
+const createWordTable = require('./models/word/createWordTable');
 const createIndices = require('./models/createIndices');
 const handleAdd = require('./controllers/handleAdd');
 const handleList = require('./controllers/handleList');

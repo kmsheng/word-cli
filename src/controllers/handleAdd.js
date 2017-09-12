@@ -1,4 +1,4 @@
-const addWord = require('./../models/addWord');
+const addWord = require('./../models/word/addWord');
 
 module.exports = async function handleAdd(sentence, description, partStr) {
 

@@ -1,4 +1,4 @@
-const db = require('./db');
+const db = require('./../db');
 
 module.exports = function listWords(...args) {
   const page = args[0] || 1;

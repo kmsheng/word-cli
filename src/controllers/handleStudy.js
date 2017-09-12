@@ -1,5 +1,5 @@
 const prompt = require('prompt');
-const getRandomWord = require('./../models/getRandomWord');
+const getRandomWord = require('./../models/word/getRandomWord');
 
 module.exports = async function handleStudy() {
 

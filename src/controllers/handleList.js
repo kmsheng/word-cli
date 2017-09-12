@@ -1,4 +1,4 @@
-const listWords = require('./../models/listWords');
+const listWords = require('./../models/word/listWords');
 
 module.exports = async function handleList() {
 
