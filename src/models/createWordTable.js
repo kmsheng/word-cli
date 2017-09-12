@@ -1,6 +1,6 @@
 const db = require('./db');
 
-module.exports = function init() {
+module.exports = function createWordTable() {
   return new Promise((resolve, reject) => {
     db.serialize(() => {
       db.run(`
