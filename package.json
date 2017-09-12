@@ -8,6 +8,9 @@
   },
   "author": "",
   "license": "ISC",
+  "bin": {
+    "word": "./src/index.js"
+  },
   "dependencies": {
     "commander": "2.11.0",
     "prompt": "1.0.0",
