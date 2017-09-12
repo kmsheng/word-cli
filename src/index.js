@@ -6,6 +6,7 @@ const createWordTable = require('./models/createWordTable');
 const createIndices = require('./models/createIndices');
 const handleAdd = require('./controllers/handleAdd');
 const handleList = require('./controllers/handleList');
+const handleStudy = require('./controllers/handleStudy');
 
 (async function main() {
 
@@ -25,6 +26,10 @@ const handleList = require('./controllers/handleList');
   program.command('list')
     .description('List words')
     .action(handleList);
+
+  program.command('study')
+    .description('Start to study words.')
+    .action(handleStudy);
 
   program.parse(process.argv);
 })();
