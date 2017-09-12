@@ -5,7 +5,7 @@ module.exports = async function handleAdd(sentence, description, partStr) {
   const [, word] = sentence.match(/\[(.+)\]/) || [];
 
   if (! word) {
-    return console.log('Word is not detected in the given sentence.');
+    return console.log('Answer is not detected in the given sentence.\nPlease wrap the answer in brackets. For example, today is a [good] day.');
   }
   if (! description) {
     return console.log('Description of a word is required.');
