@@ -25,11 +25,11 @@ module.exports = async function handleStudy() {
 
       if (res.input === answer) {
         await setCountAnswerCorrect(randomWord.countAnswerCorrect + 1);
-        console.log('correct');
+        console.log('correct\n\n');
       }
       else {
         await setCountAnswerWrong(randomWord.countAnswerWrong + 1);
-        console.log(`Wrong, should be ${answer}`);
+        console.log(`Wrong, should be ${answer}\n\n`);
       }
       return askQuestion();
     });
