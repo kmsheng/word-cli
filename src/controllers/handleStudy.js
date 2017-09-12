@@ -16,7 +16,7 @@ module.exports = async function handleStudy() {
     const sentence = randomWord.sentence.replace(/\[.+\]/, (matched) => '_ '.repeat(matched.length - 2).trim());
 
     prompt.start();
-    prompt.get({properties: {input: {description: sentence}}}, async (err, res) => {
+    prompt.get({properties: {input: {description: `\n${sentence}\n${randomWord.description}\n`}}}, async (err, res) => {
 
       if (err) {
         return;
