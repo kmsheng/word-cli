@@ -7,6 +7,7 @@ const createIndices = require('./models/createIndices');
 const handleAdd = require('./controllers/handleAdd');
 const handleList = require('./controllers/handleList');
 const handleStudy = require('./controllers/handleStudy');
+const handleRemove = require('./controllers/handleRemove');
 
 (async function main() {
 
@@ -30,6 +31,10 @@ const handleStudy = require('./controllers/handleStudy');
   program.command('study')
     .description('Start to study words.')
     .action(handleStudy);
+
+  program.command('rm')
+    .description('Remove word by id.')
+    .action(handleRemove);
 
   program.parse(process.argv);
 })();
