@@ -6,11 +6,11 @@ module.exports = function addWord({word, sentence, description, part}) {
       const stmt = db.prepare('INSERT INTO Word (word, sentence, description, part) VALUES (?, ?, ?, ?)');
       stmt.run(word, sentence, description, part, (err) => {
         if (err) {
-          reject(err);
+          return reject(err);
         }
+        resolve();
       });
       stmt.finalize();
     });
-    resolve();
   });
 }
