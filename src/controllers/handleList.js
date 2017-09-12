@@ -6,7 +6,7 @@ module.exports = async function handleList() {
 
   if (words.length > 0) {
 
-    const str = words.map(({rowid, word, part, description, sentence}) => `#${rowid} ${word} ${['n', 'v', 'a'][part]} ${description} ${sentence}`)
+    const str = words.map(({rowid, word, part, countAnswerCorrect, countAnswerWrong}) => `#${rowid} ${word} ${['n', 'v', 'a'][part]} correct: ${countAnswerCorrect} wrong: ${countAnswerWrong}`)
     .join('\n');
 
     console.log(str);
