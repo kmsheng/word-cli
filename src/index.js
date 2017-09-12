@@ -3,6 +3,7 @@
 const program = require('commander');
 const version = require('./../package.json').version;
 const createWordTable = require('./models/createWordTable');
+const createIndices = require('./models/createIndices');
 const handleAdd = require('./controllers/handleAdd');
 const handleList = require('./controllers/handleList');
 
@@ -10,6 +11,7 @@ const handleList = require('./controllers/handleList');
 
   try {
     await createWordTable();
+    await createIndices();
   }
   catch (err) {
     console.error(err);
