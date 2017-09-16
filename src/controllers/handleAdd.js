@@ -1,6 +1,6 @@
 const addWord = require('./../models/word/addWord');
 
-module.exports = async function handleAdd(sentence, description, partStr) {
+module.exports = async function handleAdd(sentence, description) {
 
   const [, word] = sentence.match(/\[(.+)\]/) || [];
 
@@ -11,19 +11,13 @@ module.exports = async function handleAdd(sentence, description, partStr) {
     return console.log('Description of a word is required.');
   }
 
-  let part = ['n', 'v', 'a'].indexOf(partStr);
-
-  if (-1 === part) {
-    part = 0;
-  }
-
   try {
-    await addWord({word, sentence, description, part})
+    await addWord({word, sentence, description})
     console.log(`Word ${word} has been added.`);
   }
   catch (err) {
-    if ('SQLITE_CONSTRAINT: UNIQUE constraint failed: Word.word, Word.part' === err.message) {
-      console.log(`${word} ${partStr} exists.`);
+    if ('SQLITE_CONSTRAINT: UNIQUE constraint failed: Word.sentence' === err.message) {
+      console.log('sentence exists.');
     }
   }
 }

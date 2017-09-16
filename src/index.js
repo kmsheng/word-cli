@@ -20,8 +20,8 @@ const handleRemove = require('./controllers/handleRemove');
   }
 
   program.version(version)
-    .command('add [sentence] [description] [part]')
-    .description('Add a word data')
+    .command('add [sentence] [description]')
+    .description('Add a word data, wrap your answer in brackts if it\'s a sentence.')
     .action(handleAdd);
 
   program.command('list')
