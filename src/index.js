@@ -8,6 +8,7 @@ const handleAdd = require('./controllers/handleAdd');
 const handleList = require('./controllers/handleList');
 const handleStudy = require('./controllers/handleStudy');
 const handleRemove = require('./controllers/handleRemove');
+const handleFind = require('./controllers/handleFind');
 
 (async function main() {
 
@@ -35,6 +36,10 @@ const handleRemove = require('./controllers/handleRemove');
   program.command('rm')
     .description('Remove word by id.')
     .action(handleRemove);
+
+  program.command('find')
+    .description('Find a word')
+    .action(handleFind);
 
   program.parse(process.argv);
 })();
