@@ -1,8 +1,6 @@
 const db = require('./../db');
 
-module.exports = function listWords(...args) {
-  const page = args[0] || 1;
-  const perPage = args[1] || 10;
+module.exports = function listWords(page, perPage) {
   return new Promise((resolve, reject) => {
     db.serialize(() => {
       db.all(`SELECT rowid, * FROM Word LIMIT ${perPage} OFFSET ${(page - 1) * perPage}`, (err, rows) => {

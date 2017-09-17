@@ -26,8 +26,8 @@ const handleFind = require('./controllers/handleFind');
     .action(handleAdd);
 
   program.command('list')
-    .option('-p, --page <page>', 'Page number for listing words', parseInt)
-    .option('-pp, --per-page <perpage>', 'Specify how many words for listing per page.', parseInt)
+    .option('-p, --page <page>', 'Page number for listing words')
+    .option('-pp, --per-page <perpage>', 'Specify how many words for listing per page.')
     .description('List words')
     .action(handleList);
 
