@@ -9,7 +9,7 @@ npm i -g word-cli
 ## Usage
 
 ```
-  Usage: word [options] [command]
+ Usage: word [options] [command]
 
 
   Options:
@@ -20,8 +20,9 @@ npm i -g word-cli
 
   Commands:
 
-    add [sentence] [description] [part]  Add a word data
-    list                                 List words
-    study                                Start to study words.
-    rm                                   Remove word by id.
+    add [sentence] [description]  Add a word data, wrap your answer in brackts if it's a sentence.
+    list [options]                List words. For example, word list --page 2 --per-page 10
+    study                         Start to study words.
+    rm                            Remove word by id.
+    find                          Find a word
 ```
