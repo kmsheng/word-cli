@@ -26,3 +26,6 @@ npm i -g word-cli
     rm                            Remove word by id.
     find                          Find a word
 ```
+
+## Caution
+Be sure to backup ~NODE\_PATH/node\_modules/word-cli/src/model/db.sqlite3 before upgrading this module.
