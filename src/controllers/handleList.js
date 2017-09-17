@@ -3,7 +3,7 @@ const countWords = require('./../models/word/countWords');
 
 module.exports = async function handleList() {
 
-  const words = await listWords();
+  const words = await listWords(this.page, this.perPage);
   const count = await countWords();
 
   if (words.length > 0) {
